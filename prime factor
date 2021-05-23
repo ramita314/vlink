@@ -1,0 +1,22 @@
+def get_prime_f(n):
+    i = 2
+    prime_f = []
+    while i*i <= n:
+        if n%i == 0:
+            prime_f.append(i)
+            n //= i
+        else:
+            i +=1
+    
+    if n>1:
+        prime_f.append(n)
+    
+    return prime_f
+
+# Read number from user
+number = int(input('Enter desired number: '))
+
+# Function call
+prime_f = get_prime_f(number)
+
+print("Prime factors of given number: ", prime_f)
